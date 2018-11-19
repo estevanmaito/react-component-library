@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+
+import Button from '../../components/Button'
+import A from '../../components/A'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        
+      <div>
+        <Button type='button'>Button</Button>
+        <Button href='#'>Link</Button>
+        <div>
+          <A href='#'>This is a link</A>
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default App
