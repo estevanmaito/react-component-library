@@ -32,6 +32,7 @@ ShallowWrapper {
       "componentStyle": ComponentStyle {
         "componentId": "sc-bdVaJa",
         "isStatic": true,
+        "lastClassName": "gAjIeR",
         "rules": Array [
           "
   color: hsl(130, 50%, 50%);
@@ -64,6 +65,7 @@ ShallowWrapper {
         "componentStyle": ComponentStyle {
           "componentId": "sc-bdVaJa",
           "isStatic": true,
+          "lastClassName": "gAjIeR",
           "rules": Array [
             "
   color: hsl(130, 50%, 50%);

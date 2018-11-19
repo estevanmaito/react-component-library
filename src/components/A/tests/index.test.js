@@ -1,16 +1,16 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
 import A from '..'
 
 describe('<A />', () => {
   it('should render an <a> tag', () => {
-    const wrapper = shallow(<A>Click me</A>)
+    const wrapper = mount(<A href="#">Click me</A>)
     expect(wrapper.find('a')).toHaveLength(1)
   })
 
   it('should have children', () => {
-    const wrapper = shallow(<A>Click me</A>)
+    const wrapper = shallow(<A  href="#">Click me</A>)
     expect(wrapper.contains('Click me')).toEqual(true)
   })
 

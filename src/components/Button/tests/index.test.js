@@ -1,21 +1,21 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
 import Button from '..'
 
 describe('<Button />', () => {
   it('should render a <button> tag', () => {
-    const wrapper = shallow(<Button type="button" />)
+    const wrapper = mount(<Button type="button">Click me</Button>)
     expect(wrapper.find('button')).toHaveLength(1)
   })
 
   it('should not render a <button> tag', () => {
-    const wrapper = shallow(<Button />)
+    const wrapper = mount(<Button>Click me</Button>)
     expect(wrapper.find('button')).toHaveLength(0)
   })
 
   it('should render an <a> tag', () => {
-    const wrapper = shallow(<Button />)
+    const wrapper = mount(<Button>Click me</Button>)
     expect(wrapper.find('a')).toHaveLength(1)
   })
 
