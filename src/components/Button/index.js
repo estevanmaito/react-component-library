@@ -1,33 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import StyledButton from './StyledButton'
-import AnchorButton from './AnchorButton'
+import {
+  PrimaryButton,
+  DangerButton,
+  InfoButton,
+  WarningButton,
+  SuccessButton
+} from './StyledButton'
 
 const Button = (props) => {
+  let Component = PrimaryButton
+  switch (props.color) {
+    case 'danger':
+      Component = DangerButton
+      break
+    case 'info':
+      Component = InfoButton
+      break
+    case 'warning':
+      Component = WarningButton
+      break
+    case 'success':
+      Component = SuccessButton
+      break
+    default:
+      break
+  }
+
   let button = (
-    <AnchorButton href={props.href}>
+    <Component {...props}>
       {props.children}
-    </AnchorButton>
+    </Component>
   )
 
-  if (props.type === 'button') {
-    button = (
-      <StyledButton onClick={props.onClick}>
-        {props.children}
-      </StyledButton>
-    )
-  }
   return button
 }
 
 Button.propTypes = {
   onClick: PropTypes.func,
   href: PropTypes.string,
-  type: PropTypes.string,
   children: PropTypes.node.isRequired,
   size: PropTypes.string,
   outline: PropTypes.bool,
+  as: PropTypes.string,
 }
 
 export default Button

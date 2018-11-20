@@ -1,9 +1,15 @@
 export const theme = {
   // colors
   primary: '#a04ed9',
-  secondary: 'red',
+  danger: 'red',
+  info: 'blue',
+  warning: 'orange',
+  success: 'green',
 }
 
-export const themeProp = prop => props => props.theme[prop]
+/**
+ *  Get a prop from theme
+ */
+export const themeProp = propName => props => props.theme[propName]
 
 export default theme

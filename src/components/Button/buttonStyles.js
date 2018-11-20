@@ -1,7 +1,9 @@
-import { css } from 'styled-components'
+import styled from 'styled-components'
+import { darken } from 'polished'
+import { themeProp } from '../../utils/theme'
 
-const buttonStyles = css`
-  background-color: hsl(130, 50%, 50%);
+export const baseStyles = styled.button`
+  background-color: ${themeProp('primary')};
   border: none;
   border-radius: 3px;
   padding: 0.5rem 1rem;
@@ -9,18 +11,63 @@ const buttonStyles = css`
   margin: 0 .35rem;
   font-size: 1rem;
   text-decoration: none;
-  line-height: 1rem;
   color: #fff;
   cursor: pointer;
 
   &:hover {
-    background-color: hsl(130, 50%, 40%);
+    /* this won't work on a dark theme */
+    background-color: ${props => darken(0.05, props.theme.primary)};
   }
 
   &:focus,
   &:active {
-    background-color: hsl(130, 50%, 35%);
+    /* this won't work on a dark theme */
+    background-color: ${props => darken(0.15, props.theme.primary)};
   }
 `
 
-export default buttonStyles
+export const dangerStyles = styled(baseStyles)`
+  background-color: ${themeProp('danger')};
+  &:hover {
+    background-color: ${props => darken(0.05, props.theme.danger)};
+  }
+  &:focus,
+  &:active {
+    background-color: ${props => darken(0.15, props.theme.danger)};
+  }
+`
+
+export const infoStyles = styled(baseStyles)`
+  background-color: ${themeProp('info')};
+  &:hover {
+    background-color: ${props => darken(0.05, props.theme.info)};
+  }
+  &:focus,
+  &:active {
+    background-color: ${props => darken(0.15, props.theme.info)};
+  }
+`
+
+export const warningStyles = styled(baseStyles)`
+  background-color: ${themeProp('warning')};
+  &:hover {
+    background-color: ${props => darken(0.05, props.theme.warning)};
+  }
+  &:focus,
+  &:active {
+    background-color: ${props => darken(0.15, props.theme.warning)};
+  }
+`
+
+export const successStyles = styled(baseStyles)`
+  background-color: ${themeProp('success')};
+  &:hover {
+    background-color: ${props => darken(0.05, props.theme.success)};
+  }
+  &:focus,
+  &:active {
+    background-color: ${props => darken(0.15, props.theme.success)};
+  }
+`
+
+export default baseStyles
