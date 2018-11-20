@@ -26,9 +26,8 @@ Button.propTypes = {
   href: PropTypes.string,
   type: PropTypes.string,
   children: PropTypes.node.isRequired,
-  // size: PropTypes.string,
-  // outline: PropTypes.bool,
-  // style: PropTypes.string
+  size: PropTypes.string,
+  outline: PropTypes.bool,
 }
 
 export default Button

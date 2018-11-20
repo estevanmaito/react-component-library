@@ -11,6 +11,16 @@ const buttonStyles = css`
   text-decoration: none;
   line-height: 1rem;
   color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsl(130, 50%, 40%);
+  }
+
+  &:focus,
+  &:active {
+    background-color: hsl(130, 50%, 35%);
+  }
 `
 
 export default buttonStyles
